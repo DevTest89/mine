@@ -1,3 +1,0 @@
-FROM httpd:latest
-ADD https://github.com/DevTest89/mine
-CMD ["/bin/bash"]
