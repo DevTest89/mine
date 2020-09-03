@@ -1,21 +1,9 @@
-version: '3.3'
+FROM mine/azure-pipelines.yml
 
-services:
-  web:
-    image: DevTest89/mine
-    ports:
-     - "80:80"
+# Add our configuration files and scripts
+WORKDIR /app
+ADD . /app
+RUN npm install
+EXPOSE 80
 
-  words:
-    image: DevTest89/mine-api
-    deploy:
-      replicas: 5
-      endpoint_mode: dnsrr
-      resources:
-        limits:
-          memory: 50M
-        reservations:
-          memory: 50M
-
-  db:
-    image: DevTest89/mine-db
+ENTRYPOINT ["/nodejs/bin/npm", "start"
