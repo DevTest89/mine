@@ -1,4 +1,4 @@
-FROM mine/azure-pipelines.yml
+FROM azure-pipelines.yml
 
 # Add our configuration files and scripts
 WORKDIR /app
