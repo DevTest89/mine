@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "ali1st-cf71"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "ali1st-cf71"
+  template:
+    metadata:
+      labels:
+        app: "ali1st-cf71"
+    spec:
+      containers:
+        - name: "ali1st-cf71"
+          image: "dcontainerr.azurecr.io/ali1st"
+          ports:
+          - containerPort: 80
